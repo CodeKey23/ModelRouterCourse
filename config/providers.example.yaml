@@ -1,0 +1,30 @@
+providers:
+  openai:
+    base_url: ${OPENAI_BASE_URL}
+    health_url: ${GATEWAY_HEALTH_URL}
+    timeout: 60
+    max_retries: 3
+    key_strategy: round_robin
+    keys:
+      - key: ${OPENAI_KEY_1}
+        rpm: 60
+        weight: 1
+    models:
+      - name: gpt-4o-mini
+        routing_keys:
+          - openai/gpt-4o-mini
+        pricing:
+          prompt: 0.15
+          completion: 0.60
+
+server:
+  host: 0.0.0.0
+  port: 8000
+
+auth:
+  api_key: ${ROUTER_API_KEY}
+
+semantic_routing:
+  enabled: false
+
+keyword_rules: []

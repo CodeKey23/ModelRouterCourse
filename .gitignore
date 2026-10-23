@@ -1,0 +1,50 @@
+# Local environment and secrets.
+.env
+.env.*
+!.env.example
+
+# Local provider configuration may contain credentials.
+/config/providers.yaml
+
+# Local SQLite databases and their journal files.
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+
+# Python bytecode and caches.
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Generated benchmark executions and runtime logs.
+runs/
+logs/
+.embed_cache/
+*.log
+*.log.*
+
+# Test and coverage artifacts.
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Keep local test suites out of the published branch.
+/tests/
+/rsl/tests/
+
+# Virtual environments.
+.venv/
+venv/
+env/
+ENV/
+
+# Editor and OS artifacts.
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
